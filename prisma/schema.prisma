@@ -13,6 +13,6 @@ datasource db {
 model username{
   id      String @id @default(uuid())
   email   String
-
+  created_at DateTime @default(now())
   @@map("usernames")
 }
