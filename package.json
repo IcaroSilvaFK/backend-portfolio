@@ -6,7 +6,9 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/server.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "migrate:dev": "yarn prisma migrate dev",
+    "migrate:deploy": "yarn prisma migrate deploy"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
