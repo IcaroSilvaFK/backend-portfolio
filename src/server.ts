@@ -1,3 +1,8 @@
+/**
+ * @author @IcaroSilvaFK
+ * @version 0.1
+ */
+
 import express from "express";
 import Cors from "cors";
 
