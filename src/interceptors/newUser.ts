@@ -14,9 +14,11 @@ export class NewUser {
       const createUserUseCase = new ISubmitEmailUseCase(
         createNewUserRepositorie
       );
-      await createUserUseCase.execute({ email });
-
-      return response.status(201).json({ message: "User create success" });
+      const { message } = await createUserUseCase.execute({ email });
+      if (message === "Email exists") {
+        return response.status(400).json({ message });
+      }
+      return response.status(201).json({ message });
     } catch (error) {
       return response.status(500).json({ message: "Internal Server Error" });
     }

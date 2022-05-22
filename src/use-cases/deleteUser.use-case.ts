@@ -4,7 +4,9 @@ export class DeleUSerUseCase {
   constructor(private deleUserService: DeleteUser) {}
   async execute(id: string) {
     try {
-      await this.deleUserService.delete(id);
+      const response = await this.deleUserService.delete(id);
+
+      return response;
     } catch (error) {
       throw new Error();
     }

@@ -3,5 +3,5 @@ export interface IUserProps {
 }
 
 export interface INewUser {
-  create: (user: IUserProps) => Promise<void>;
+  create: (user: IUserProps) => Promise<{ message: string }>;
 }

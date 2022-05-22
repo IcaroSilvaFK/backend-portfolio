@@ -13,7 +13,8 @@ export class ISubmitEmailUseCase {
     }
 
     try {
-      await this.createNewUser.create({ email });
+      const response = await this.createNewUser.create({ email });
+      return response;
     } catch (error) {
       throw new Error("Internal server error");
     }

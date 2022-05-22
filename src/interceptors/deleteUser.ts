@@ -14,9 +14,9 @@ export class DeleteUserRoute {
       const DeleUser = new DeleteUser();
       const DeleUserUseCase = new DeleUSerUseCase(DeleUser);
 
-      await DeleUserUseCase.execute(id);
+      const data = await DeleUserUseCase.execute(id);
 
-      return response.status(200).json({ message: "User deleted success" });
+      return response.status(200).json({ message: data });
     } catch (error) {
       return response.status(500).json({ message: "Internal Server Error" });
     }
