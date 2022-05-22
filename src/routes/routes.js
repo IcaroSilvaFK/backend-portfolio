@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routes = void 0;
+const express_1 = require("express");
+const deleteUser_1 = require("../interceptors/deleteUser");
+const getUsers_1 = require("../interceptors/getUsers");
+const newUser_1 = require("../interceptors/newUser");
+const routes = (0, express_1.Router)();
+exports.routes = routes;
+routes.post("/", newUser_1.NewUser.NewUserRoute);
+routes.get("/", getUsers_1.GetUsersRoute.getAllUsers);
+routes.delete("/:id", deleteUser_1.DeleteUserRoute.deleteUser);
