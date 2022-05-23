@@ -11,8 +11,14 @@ datasource db {
 }
 
 model username{
-  id      String @id @default(uuid())
-  email   String
+  id         String @id @default(uuid())
+  email      String
   created_at DateTime @default(now())
   @@map("usernames")
+}
+model images{
+  id        String @id @default(uuid())
+  image_url String
+  alt       String 
+  @@map("images_url")
 }
